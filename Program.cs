@@ -2,6 +2,8 @@
 //Console.WriteLine("Hello, World!");
 using EspacioCalculadora;
 
+/*
+
 Calculadora num = new Calculadora();
 int opcion = 999;
 double operando;
@@ -110,4 +112,8 @@ do
     }
 
 } while (opcion != 6);
+
+*/
+
+using EspacioEmpresa;
 

@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
+using System.Globalization;
 using EspacioCalculadora;
 
 /*
@@ -117,3 +118,8 @@ do
 
 using EspacioEmpresa;
 
+Empleado []empleados = new Empleado[3];
+
+empleados[0] = new Empleado();
+empleados[1] = new Empleado();
+empleados[2] = new Empleado();

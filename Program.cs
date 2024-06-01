@@ -156,3 +156,41 @@ for (int i = 0; i < 3; i++)
     montoTotalEmpleados = montoTotalEmpleados + salarioAux;
 }
 Console.WriteLine("\n----------El monto total es: " + montoTotalEmpleados + " $ ----------\n");
+
+//Mostrar datos del empleado mas cerca de jubilarse.
+int aux = 1000, j = 0;
+
+for (int i = 0; i < 3; i++)
+{
+    DateTime nacAux = empleados[i].FechaNacimientoEmpleado;
+    DateTime actualAux = DateTime.Now;
+
+    int jubiAux = empleados[i].jubilacion(nacAux, actualAux);
+
+    if (aux > jubiAux)
+    {
+        aux = jubiAux;
+        j = i;
+    }
+}
+
+Console.WriteLine("\n----------Datos del empleado----------\n");
+Console.WriteLine("\nNombre: " + empleados[j].NombreEmpleado + "\n");
+Console.WriteLine("\nApellido: " + empleados[j].ApellidoEmpleado + "\n");
+Console.WriteLine("\nNacimiento: " + empleados[j].FechaNacimientoEmpleado + "\n");
+Console.WriteLine("\nEstado civil: " + empleados[j].EstadoCivilEmpleado + "\n");
+Console.WriteLine("\nIngreso: " + empleados[j].IngresoEmpresaEmpleado + "\n");
+Console.WriteLine("\nSueldo basico: " + empleados[j].SueldoBasicoEmpleado + "\n");
+Console.WriteLine("\nCargo: " + empleados[j].CargoEmpleado + "\n");
+
+DateTime ingresoAux1 = empleados[j].IngresoEmpresaEmpleado;
+DateTime actualAux1 = DateTime.Now;
+int antiguedad1 = empleados[j].Antiguedad(ingresoAux1, actualAux1);
+Console.WriteLine("\nAntiguedad: " + antiguedad1 + " años\n");
+
+DateTime nacimientoAux1 = empleados[j].FechaNacimientoEmpleado;
+int edad1 = empleados[j].edadEmpleado(nacimientoAux1 ,actualAux1);
+Console.WriteLine("\nEdad: " + edad1 + " años\n");
+
+int jubiAux1 = empleados[j].jubilacion(nacimientoAux1, actualAux1);
+Console.WriteLine("\nCantidad de años que faltan para jubilarse " + jubiAux1 + " años\n");

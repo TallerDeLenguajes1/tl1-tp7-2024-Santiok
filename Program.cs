@@ -116,10 +116,43 @@ do
 
 */
 
+//EJERCICIO NUMERO 2.
+
 using EspacioEmpresa;
 
+double montoTotalEmpleados = 0;
+
+//Creo el arreglo de empleados.
 Empleado []empleados = new Empleado[3];
 
-empleados[0] = new Empleado();
-empleados[1] = new Empleado();
-empleados[2] = new Empleado();
+Empleado.Cargo cargoEmpleado1 = (Empleado.Cargo)Enum.Parse(typeof(Empleado.Cargo), "Ingeniero", true);
+empleados[0] = new Empleado("Santiago", "Medina", DateTime.Parse("2002-05-13"), 's', DateTime.Parse("2020-10-20"), 600000, cargoEmpleado1);
+
+Empleado.Cargo cargoEmpleado2 = (Empleado.Cargo)Enum.Parse(typeof(Empleado.Cargo), "Especialista", true);
+empleados[1] = new Empleado("Daniel", "Juarez", DateTime.Parse("1980-08-06"), 'c', DateTime.Parse("2006-04-16"), 500000, cargoEmpleado2);
+
+Empleado.Cargo cargoEmpleado3 = (Empleado.Cargo)Enum.Parse(typeof(Empleado.Cargo), "Auxiliar", true);
+empleados[2] = new Empleado("Maria", "Gomez", DateTime.Parse("1992-06-28"), 's', DateTime.Parse("2010-10-10"), 200000, cargoEmpleado3);
+
+
+//Obtengo el monto total.
+for (int i = 0; i < 3; i++)
+{
+    int antiguedadAux;
+    double salarioAux, sueldoAux;
+    char estadoAux;
+    Empleado.Cargo cargoAux;
+    DateTime ingresoAux = empleados[i].IngresoEmpresaEmpleado;
+    DateTime actualAux = DateTime.Now;
+
+    antiguedadAux = empleados[i].Antiguedad(ingresoAux, actualAux);
+    sueldoAux = empleados[i].SueldoBasicoEmpleado;
+    estadoAux = empleados[i].EstadoCivilEmpleado;
+    cargoAux = empleados[i].CargoEmpleado;
+
+
+    salarioAux = empleados[i].salarioTotal(sueldoAux, antiguedadAux, cargoAux, estadoAux);
+
+    montoTotalEmpleados = montoTotalEmpleados + salarioAux;
+}
+Console.WriteLine("\n----------El monto total es: " + montoTotalEmpleados + " $ ----------\n");

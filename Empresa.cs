@@ -8,7 +8,8 @@ public class Empleado
     private char estadoCivil;
     private DateTime ingresoEmpresa;
     private double sueldoBasico;
-    public enum cargo{
+    private Cargo cargo; 
+    public enum Cargo{
                                 Auxiliar,
                                 Administrativo,
                                 Ingeniero,
@@ -16,8 +17,50 @@ public class Empleado
                                 Investigador
                                 };
 
+    //Metodo constructor.
+    public Empleado(string nom, string ape, DateTime nacimiento, char estCivil, DateTime ingreso, double sueldo, Cargo cargo)
+    {
+        this.Nombre = nom;
+        this.Apellido = ape;
+        this.fecNac = nacimiento;
+        this.estadoCivil = estCivil;
+        this.ingresoEmpresa = ingreso;
+        this.sueldoBasico = sueldo;
+        this.cargo = cargo;
+    }
+
+    //Metodo para acceder a los campos de la clase.
+    public string NombreEmpleado
+    {
+        get { return Nombre;}
+    }
+    public string ApellidoEmpleado
+    {
+        get { return Apellido;}
+    }
+    public DateTime FechaNacimientoEmpleado
+    {
+        get { return fecNac; }
+    }
+    public char EstadoCivilEmpleado
+    {
+        get { return estadoCivil; }
+    }
+    public DateTime IngresoEmpresaEmpleado
+    {
+        get { return ingresoEmpresa; }
+    }
+    public double SueldoBasicoEmpleado
+    {
+        get { return sueldoBasico; }
+    }
+    public Cargo CargoEmpleado
+    {
+        get { return cargo; }
+    }
+
     //Metodo para obtener la antiguedad.
-    public int antiguedad(DateTime ingreso, DateTime actual)
+    public int Antiguedad(DateTime ingreso, DateTime actual)
     {
         int anioIngreso = ingreso.Year;
         int anioActual = actual.Year;
@@ -64,7 +107,7 @@ public class Empleado
         }
 
     //Metodo para calcular el salario.
-    public double salarioTotal(double sueldo, int antiguedad, cargo cargoE, char estadoC)
+    public double salarioTotal(double sueldo, int antiguedad, Cargo cargoE, char estadoC)
     {
         double total = sueldo;
 
@@ -80,7 +123,7 @@ public class Empleado
 
         //Calculo del tipo de cargo.
 
-        if (cargoE == cargo.Ingeniero || cargoE == cargo.Especialista)
+        if (cargoE == Cargo.Ingeniero || cargoE == Cargo.Especialista)
         {
             total = total + total * 0.5;
         }

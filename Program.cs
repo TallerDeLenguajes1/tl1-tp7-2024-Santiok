@@ -3,8 +3,6 @@
 using System.Globalization;
 using EspacioCalculadora;
 
-/*
-
 Calculadora num = new Calculadora();
 int opcion = 999;
 double operando;
@@ -113,8 +111,6 @@ do
     }
 
 } while (opcion != 6);
-
-*/
 
 //EJERCICIO NUMERO 2.
 

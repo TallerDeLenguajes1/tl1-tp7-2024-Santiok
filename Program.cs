@@ -2,6 +2,7 @@
 //Console.WriteLine("Hello, World!");
 using System.Globalization;
 using EspacioCalculadora;
+using EspacioEmpresa;
 
 Calculadora num = new Calculadora();
 int opcion = 999;
@@ -26,9 +27,9 @@ do
                 Console.WriteLine("\nEl valor es: 0 + " + operando + " = " + num.Resultado);
             } else
             {
-                double aux = num.Resultado;
+                double Aux = num.Resultado;
                 num.Sumar(operando);
-                Console.WriteLine("\nEl valor es: " + aux + "+" + operando + " = " + num.Resultado);
+                Console.WriteLine("\nEl valor es: " + Aux + "+" + operando + " = " + num.Resultado);
             }
 
         break;
@@ -44,9 +45,9 @@ do
                 Console.WriteLine("\nEl valor es: 0 - " + operando + " = " + num.Resultado);
             } else
             {
-                double aux = num.Resultado;
+                double Aux = num.Resultado;
                 num.Restar(operando);
-                Console.WriteLine("\nEl valor es: " + aux + "-" + operando + " = " + num.Resultado);
+                Console.WriteLine("\nEl valor es: " + Aux + "-" + operando + " = " + num.Resultado);
             }
 
         break;
@@ -62,9 +63,9 @@ do
                 Console.WriteLine("\nEl valor es: 0 * " + operando + " = " + num.Resultado);
             } else
             {
-                double aux = num.Resultado;
+                double Aux = num.Resultado;
                 num.Multiplicar(operando);
-                Console.WriteLine("\nEl valor es: " + aux + "*" + operando + " = " + num.Resultado);
+                Console.WriteLine("\nEl valor es: " + Aux + "*" + operando + " = " + num.Resultado);
             }
 
         break;
@@ -80,9 +81,9 @@ do
                 Console.WriteLine("\nEl valor es: 0 / " + operando + " = " + num.Resultado);
             } else
             {
-                double aux = num.Resultado;
+                double Aux = num.Resultado;
                 num.Dividir(operando);
-                Console.WriteLine("\nEl valor es: " + aux + "/" + operando + " = " + num.Resultado);
+                Console.WriteLine("\nEl valor es: " + Aux + "/" + operando + " = " + num.Resultado);
             }
 
         break;
@@ -113,8 +114,6 @@ do
 } while (opcion != 6);
 
 //EJERCICIO NUMERO 2.
-
-using EspacioEmpresa;
 
 double montoTotalEmpleados = 0;
 
